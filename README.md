@@ -1,8 +1,11 @@
 # LossAssessment
+This page is the online repository for the following submitted manuscript: Kitayama S, Cilsalar H. (Under Review). "Comparative Seismic Loss Assessment of Seismically Isolated and Non-Isolated Buildings Designed by the Procedure of ASCE/SEI 7-16."
+
 This repository contains seismic loss assessment MATLAB code.
 
 Prepared by: Shoma Kitayama (shomakit@buffalo.edu)
-Last modified: 5.Oct.2020
+Checked by: Huseyin Cilsalar (huseyin.cilsalar@bozok.edu.tr)
+Last modified: 23.Oct.2020
 Version: 1.0
 
 The folder contains MATLAB codes that computes the following values that are the results of seismic loss assessment of seismically isolated buildings with SCBF designed by RI=2 and TFP-1 based on Conditional Spectra approach (notations are explained in the manuscript):
