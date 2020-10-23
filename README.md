@@ -25,4 +25,4 @@ Baker JW. (2015). “Efficient analytical fragility function fitting using dynam
 
 ---
 Cited article that does not appear in the manuscript:
-Jalayer F. (2003). "Direct probailitic seismic analysis: Implementing non-linear dynamic assessments." PhD. Thesis. Stanford University.
+Jalayer F. (2003). "Direct probabilitic seismic analysis: Implementing non-linear dynamic assessments." PhD. Thesis. Stanford University.
