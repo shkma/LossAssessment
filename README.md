@@ -6,7 +6,13 @@ This repository contains seismic loss assessment MATLAB code.
 Prepared by: Shoma Kitayama (shomakit@buffalo.edu)
 Checked by: Huseyin Cilsalar (huseyin.cilsalar@bozok.edu.tr)
 Last modified: 23.Oct.2020
-Version: 1.0
+Version: 2.0
+
+#Log
+05Feb2021. Three files were updated:
+"info_Comp_Fragility_NonStructural_Accel.m",
+"info_Comp_Fragility_Structural" and
+"info_num_Components_Structural.m".
 
 The folder contains MATLAB codes that computes the following values that are the results of seismic loss assessment of seismically isolated buildings with SCBF designed by RI=2 and TFP-1 based on Conditional Spectra approach (notations are explained in the manuscript):
 
