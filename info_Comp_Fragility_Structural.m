@@ -243,10 +243,10 @@ function [PDS_ij_EDP, xm_Cost, numCompPerStory] = info_Comp_Fragility_Structural
        if (i_story == 1 && system == 1) || (i_story == 2 && system == 1) || (i_story == 1 && system == 3) || (i_story == 2 && system == 3) %  for first story non-isolated SCBF & isolated SCBF w. Ri=1, thicker HSS is more expensive for DS2 & DS3.
             
            if i_n == 0  % Round HSS (60kg/m < brace weight < 147kg/m); Round HSS
-
-              xm_EDP=0.41  /100.; beta_EDP=0.51; xm_Cost=0.; % added "/100." on 19.Apr.2020
+              
+              xm_EDP=0.41  /100.; beta_EDP=0.51; xm_Cost=0.; % added "/100." on 22.Apr.2020
               F_DS_ij    = normcdf((log(x_PSDR_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
-
+                    
                     % Geometric parameters (KL/r) - - - - -
                     xm_GP=63.6; beta_GP=0.46;
                     F_DS_ij_GP = normcdf((log(x_GP/xm_GP))/beta_GP); % compute fragility function using Eq. 1 and estimated parameters
@@ -256,9 +256,9 @@ function [PDS_ij_EDP, xm_Cost, numCompPerStory] = info_Comp_Fragility_Structural
 
            elseif i_n == 1
 
-              xm_EDP=0.41  /100.; beta_EDP=0.51; xm_Cost=29983.;  % added "/100." on 19.Apr.2020
+              xm_EDP=0.41  /100.; beta_EDP=0.51; xm_Cost=29983.; % added "/100." on 22.Apr.2020
               F_DS_i1    = normcdf((log(x_PSDR_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
-              xm_EDP=0.96  /100.; beta_EDP=0.45;                  % added "/100." on 19.Apr.2020
+              xm_EDP=0.96  /100.; beta_EDP=0.45;                 % added "/100." on 22.Apr.2020
               F_DS_i2    = normcdf((log(x_PSDR_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
 
                     % Geometric parameters (KL/r) - - - - -
@@ -272,9 +272,9 @@ function [PDS_ij_EDP, xm_Cost, numCompPerStory] = info_Comp_Fragility_Structural
 
            elseif i_n == 2
 
-              xm_EDP=0.96  /100.; beta_EDP=0.45; xm_Cost=47115.;     % added "/100." on 19.Apr.2020
+              xm_EDP=0.96  /100.; beta_EDP=0.45; xm_Cost=47115.;  % added "/100." on 22.Apr.2020
               F_DS_i1    = normcdf((log(x_PSDR_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
-              xm_EDP=2.75  /100.; beta_EDP=0.51;                     % added "/100." on 19.Apr.2020
+              xm_EDP=2.75  /100.; beta_EDP=0.51;                  % added "/100." on 22.Apr.2020
               F_DS_i2    = normcdf((log(x_PSDR_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
 
                     % Geometric parameters (D/t/lambda_hd) - - - - -
@@ -288,7 +288,7 @@ function [PDS_ij_EDP, xm_Cost, numCompPerStory] = info_Comp_Fragility_Structural
 
            elseif i_n == 3
 
-              xm_EDP=2.75  /100.; beta_EDP=0.51; xm_Cost=47882.;      % added "/100." on 19.Apr.2020
+              xm_EDP=2.75  /100.; beta_EDP=0.51; xm_Cost=47882.;      % added "/100." on 22.Apr.2020
               F_DS_ij    = normcdf((log(x_PSDR_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
 
                     % Geometric parameters (D/t/lambda_hd) - - - - -
@@ -304,7 +304,7 @@ function [PDS_ij_EDP, xm_Cost, numCompPerStory] = info_Comp_Fragility_Structural
            
            if i_n == 0  % Round HSS (brace weight < 60kg/m); Round HSS
 
-              xm_EDP=0.41  /100.; beta_EDP=0.51; xm_Cost=0.%   29983.;   % added "/100." on 19.Apr.2020
+              xm_EDP=0.41  /100.; beta_EDP=0.51; xm_Cost=0.%   29983.;  % added "/100." on 22.Apr.2020
               F_DS_ij    = normcdf((log(x_PSDR_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
 
                     % Geometric parameters (D/t/lambda_hd) - - - - -
@@ -316,25 +316,25 @@ function [PDS_ij_EDP, xm_Cost, numCompPerStory] = info_Comp_Fragility_Structural
 
            elseif i_n == 1
 
-              xm_EDP=0.41  /100.; beta_EDP=0.51; xm_Cost=29983.;   % added "/100." on 19.Apr.2020
+              xm_EDP=0.41  /100.; beta_EDP=0.51; xm_Cost=29983.;     % added "/100." on 22.Apr.2020
               F_DS_i1    = normcdf((log(x_PSDR_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
-              xm_EDP=0.96  /100.; beta_EDP=0.45;                   % added "/100." on 19.Apr.2020
+              xm_EDP=0.96  /100.; beta_EDP=0.45;                       % added "/100." on 22.Apr.2020
               F_DS_i2    = normcdf((log(x_PSDR_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
 
                     % Geometric parameters (D/t/lambda_hd) - - - - -
                     xm_GP=63.6; beta_GP=0.46;
-                    F_DS_i1_GP = normcdf((log(x_GP/xm_GP))/beta_GP); % compute fragility function using Eq. 1 and estimated parameters
+                    F_DS_i1_GP = normcdf((log(x_GP/xm_GP))/beta_GP);   % compute fragility function using Eq. 1 and estimated parameters
                     xm_GP=66.1; beta_GP=0.45;
-                    F_DS_i2_GP = normcdf((log(x_GP/xm_GP))/beta_GP); % compute fragility function using Eq. 1 and estimated parameters
+                    F_DS_i2_GP = normcdf((log(x_GP/xm_GP))/beta_GP);   % compute fragility function using Eq. 1 and estimated parameters
                     %  - - - - - - - - - - - - - - - - - - - - - - -
               
               PDS_ij_EDP = F_DS_i1*F_DS_i1_GP - F_DS_i2*F_DS_i2_GP;    % 1<=j<=n, i.e. some damage
 
            elseif i_n == 2
 
-              xm_EDP=0.96  /100.; beta_EDP=0.45; xm_Cost=37014.;   % added "/100." on 19.Apr.2020
+              xm_EDP=0.96  /100.; beta_EDP=0.45; xm_Cost=37014.;       % added "/100." on 22.Apr.2020
               F_DS_i1    = normcdf((log(x_PSDR_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
-              xm_EDP=2.75  /100.; beta_EDP=0.51;                   % added "/100." on 19.Apr.2020
+              xm_EDP=2.75  /100.; beta_EDP=0.51;                       % added "/100." on 22.Apr.2020
               F_DS_i2    = normcdf((log(x_PSDR_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
 
                     % Geometric parameters (D/t/lambda_hd) - - - - -
@@ -344,11 +344,11 @@ function [PDS_ij_EDP, xm_Cost, numCompPerStory] = info_Comp_Fragility_Structural
                     F_DS_i2_GP = normcdf((log(x_GP/xm_GP))/beta_GP); % compute fragility function using Eq. 1 and estimated parameters
                     %  - - - - - - - - - - - - - - - - - - - - - - -
               
-              PDS_ij_EDP = F_DS_i1*F_DS_i1_GP - F_DS_i2*F_DS_i2_GP;  % 1<=j<=n, i.e. some damage
+              PDS_ij_EDP = F_DS_i1*F_DS_i1_GP - F_DS_i2*F_DS_i2_GP;   % 1<=j<=n, i.e. some damage
 
            elseif i_n == 3
 
-              xm_EDP=2.75  /100.; beta_EDP=0.51; xm_Cost=36480.;     % added "/100." on 19.Apr.2020
+              xm_EDP=2.75  /100.; beta_EDP=0.51; xm_Cost=36480.;       % added "/100." on 22.Apr.2020
               F_DS_ij    = normcdf((log(x_PSDR_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
 
                     % Geometric parameters (D/t/lambda_hd) - - - - -
@@ -368,12 +368,12 @@ function [PDS_ij_EDP, xm_Cost, numCompPerStory] = info_Comp_Fragility_Structural
     % % % % % % % % % % % % % % % %
         
         numCompPerStory = 8;
-        
+       
         if system == 1  || system == 3  || system == 4 % if SCBF (isolated OR non-isolated) 
             
         
            if i_n == 0  % Moment connection; one-sided; <= W27
-
+              
               xm_EDP=0.03; beta_EDP=0.30; xm_Cost=0.%   16033.;
               F_DS_ij    = normcdf((log(x_PSDR_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
               PDS_ij_EDP = 1.0 - F_DS_ij;   % j=0, i.e. no damage
@@ -403,10 +403,10 @@ function [PDS_ij_EDP, xm_Cost, numCompPerStory] = info_Comp_Fragility_Structural
            end
        
            
-        elseif system == 2  || system == 5  || system == 6 % if SMRF (isolated OR non-isolated) 
+      elseif system == 2  || system == 5  || system == 6 % if SMRF (isolated OR non-isolated) 
             
         
-           if i_n == 0  % RBS connection; one-sided; <= W27
+           if i_n == 0  % one-sided; <= W27
 
               xm_EDP=0.01;   beta_EDP=0.17; xm_Cost=0.%   16033.;
               F_DS_ij    = normcdf((log(x_PSDR_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
@@ -450,7 +450,7 @@ function [PDS_ij_EDP, xm_Cost, numCompPerStory] = info_Comp_Fragility_Structural
             
            if i_n == 0  % Moment connection; two-sided; <= W27
 
-              xm_EDP=0.03; beta_EDP=0.30; xm_Cost=0.%   30400.;
+              xm_EDP=0.03; beta_EDP=0.30; xm_Cost=0.;
               F_DS_ij    = normcdf((log(x_PSDR_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
               PDS_ij_EDP = 1.0 - F_DS_ij;   % j=0, i.e. no damage
 
@@ -479,8 +479,7 @@ function [PDS_ij_EDP, xm_Cost, numCompPerStory] = info_Comp_Fragility_Structural
            end
        
            
-        elseif system == 2  || system == 5  || system == 6 % if SMRF (isolated OR non-isolated) 
-
+      elseif system == 2  || system == 5  || system == 6 % if SMRF (isolated OR non-isolated) 
             
            if i_n == 0  % Moment connection; two-sided; <= W27
 
@@ -518,8 +517,13 @@ function [PDS_ij_EDP, xm_Cost, numCompPerStory] = info_Comp_Fragility_Structural
     % % % % % % % % % % % % % % % %
     elseif i_m == 7
     % % % % % % % % % % % % % % % %
-        
-        numCompPerStory = 80;
+    
+        % Added on 30Jan2021
+        if     system == 1  || system == 3  || system == 4
+            numCompPerStory = 104; % SCBF
+        elseif system == 2  || system == 5  || system == 6 
+            numCompPerStory = 80;  % SMF
+        end
         
        if i_n == 0  % Shear tab connections
           
@@ -566,7 +570,7 @@ function [PDS_ij_EDP, xm_Cost, numCompPerStory] = info_Comp_Fragility_Structural
           
        elseif i_n == 1
           
-          xm_EDP=0.00375; beta_EDP=0.13; xm_Cost=180.;
+          xm_EDP=0.00375; beta_EDP=0.13; xm_Cost=18.; % xm_Cost=180.;
           F_DS_i1    = normcdf((log(x_PSDR_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
           xm_EDP=0.01; beta_EDP=0.22; 
           F_DS_i2    = normcdf((log(x_PSDR_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
@@ -574,7 +578,7 @@ function [PDS_ij_EDP, xm_Cost, numCompPerStory] = info_Comp_Fragility_Structural
           
        elseif i_n == 2
                
-          xm_EDP=0.01; beta_EDP=0.22; xm_Cost=330.;
+          xm_EDP=0.01; beta_EDP=0.22; xm_Cost=33.; % xm_Cost=330.;
           F_DS_i1    = normcdf((log(x_PSDR_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
           xm_EDP=0.05; beta_EDP=0.35;
           F_DS_i2    = normcdf((log(x_PSDR_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
@@ -582,7 +586,7 @@ function [PDS_ij_EDP, xm_Cost, numCompPerStory] = info_Comp_Fragility_Structural
           
        elseif i_n == 3
           
-          xm_EDP=0.05; beta_EDP=0.35; xm_Cost=570.;
+          xm_EDP=0.05; beta_EDP=0.35; xm_Cost=57.; % xm_Cost=570.;
           F_DS_ij    = normcdf((log(x_PSDR_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
           PDS_ij_EDP = F_DS_ij;             % j=n, i.e. biggest damage
           
