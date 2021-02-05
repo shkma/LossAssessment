@@ -11,31 +11,37 @@ function [PDS_ij_EDP, xm_Cost, numCompPerStory] = info_Comp_Fragility_NonStructu
     
         numCompPerStory = 21*(9.144*9.144) /232.0; % total area divided by 232 m^2
         
-       if i_n == 0  % Corrugated slab
+       if i_n == 0  % Suspended Ceiling (corrected on 30Jan2021)
 
-          xm_EDP=0.35; beta_EDP=0.40; xm_Cost=0.%   3542.;
+%         xm_EDP=1.09; beta_EDP=0.30; xm_Cost=0.%   3542.;
+          xm_EDP=0.56; beta_EDP=0.25; xm_Cost=0.;
           F_DS_ij    = normcdf((log(x_Accel_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
           PDS_ij_EDP = 1.0 - F_DS_ij;   % j=0, i.e. no damage
           
        elseif i_n == 1
           
-          xm_EDP=0.35; beta_EDP=0.40; xm_Cost=3542.;
+%         xm_EDP=1.09; beta_EDP=0.30; xm_Cost=3542.;
+          xm_EDP=0.56; beta_EDP=0.25; xm_Cost=3542.;
           F_DS_i1    = normcdf((log(x_Accel_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
-          xm_EDP=0.55; beta_EDP=0.40;
+%         xm_EDP=1.69; beta_EDP=0.30;
+          xm_EDP=1.08; beta_EDP=0.25;
           F_DS_i2    = normcdf((log(x_Accel_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
           PDS_ij_EDP = F_DS_i1 - F_DS_i2;   % 1<=j<=n, i.e. some damage
           
        elseif i_n == 2
                
-          xm_EDP=0.55; beta_EDP=0.40; xm_Cost=29337.;
+%         xm_EDP=1.69; beta_EDP=0.30; xm_Cost=29337.;
+          xm_EDP=1.08; beta_EDP=0.25; xm_Cost=29337.;
           F_DS_i1    = normcdf((log(x_Accel_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
-          xm_EDP=0.80; beta_EDP=0.40;
+%         xm_EDP=1.91; beta_EDP=0.30;
+          xm_EDP=1.31; beta_EDP=0.25;
           F_DS_i2    = normcdf((log(x_Accel_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
           PDS_ij_EDP = F_DS_i1 - F_DS_i2;   % 1<=j<=n, i.e. some damage
           
        elseif i_n == 3
           
-          xm_EDP=0.80; beta_EDP=0.40; xm_Cost=55200.;
+%         xm_EDP=1.91; beta_EDP=0.30; xm_Cost=55200.;
+          xm_EDP=1.31; beta_EDP=0.25; xm_Cost=55200.;
           F_DS_ij    = normcdf((log(x_Accel_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
           PDS_ij_EDP = F_DS_ij;             % j=n, i.e. biggest damage
           
@@ -50,13 +56,13 @@ function [PDS_ij_EDP, xm_Cost, numCompPerStory] = info_Comp_Fragility_NonStructu
           
        if i_n == 0  % Automatic sprinklers
           
-          xm_EDP=0.32; beta_EDP=1.40; xm_Cost=0.%   900.;
+          xm_EDP=32.0; beta_EDP=1.40; xm_Cost=0.%   900.;
           F_DS_ij    = normcdf((log(x_Accel_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
           PDS_ij_EDP = 1.0 - F_DS_ij;   % j=0, i.e. no damage
           
        elseif i_n == 1
           
-          xm_EDP=0.32; beta_EDP=1.40; xm_Cost=900.;
+          xm_EDP=32.0; beta_EDP=1.40; xm_Cost=900.;
           F_DS_ij    = normcdf((log(x_Accel_pdf/xm_EDP))/beta_EDP); % compute fragility function using Eq. 1 and estimated parameters
           PDS_ij_EDP = F_DS_ij;             % j=n, i.e. biggest damage
           
