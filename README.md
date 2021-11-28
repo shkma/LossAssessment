@@ -5,7 +5,7 @@ This repository contains seismic loss assessment MATLAB code.
 
 Prepared by: Shoma Kitayama (s.kitayama@leeds.ac.uk)
 Checked by: Huseyin Cilsalar (huseyin.cilsalar@bozok.edu.tr)
-Last modified: 23.Oct.2020
+Last modified: 05.Feb.2021
 Version: 2.0
 
 #Log
