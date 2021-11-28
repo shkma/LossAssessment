@@ -1,14 +1,18 @@
 # LossAssessment
-This page is the online repository for the following submitted manuscript: Kitayama S, Cilsalar H. (Under Review). "Comparative Seismic Loss Assessment of Seismically Isolated and Non-Isolated Buildings Designed by the Procedure of ASCE/SEI 7-16."
+This page is the online repository for the following journal article: Kitayama, S., Cilsalar, H. (2021). "Seismic loss assessment of seismically isolated buildings designed by the procedures of ASCE/SEI 7-16." Bull Earthquake Eng. https://doi.org/10.1007/s10518-021-01274-y 
 
 This repository contains seismic loss assessment MATLAB code.
 
-Prepared by: Shoma Kitayama (shomakit@buffalo.edu)
+Prepared by: Shoma Kitayama (s.kitayama@leeds.ac.uk)
 Checked by: Huseyin Cilsalar (huseyin.cilsalar@bozok.edu.tr)
 Last modified: 23.Oct.2020
 Version: 2.0
 
 #Log
+28Nov2021. "README.md in main" included the title of the journal, DOI and the publications date.
+
+16Nov2021. The manuscript was published on a journal, Bulletin of Earthquake Engineering.
+
 05Feb2021. Three files were updated:
 "info_Comp_Fragility_NonStructural_Accel.m",
 "info_Comp_Fragility_Structural" and
