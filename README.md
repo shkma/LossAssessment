@@ -1,5 +1,5 @@
 # LossAssessment
-This page is the online repository for the following journal article: Kitayama, S., Cilsalar, H. (2021). "Seismic loss assessment of seismically isolated buildings designed by the procedures of ASCE/SEI 7-16." Bull Earthquake Eng. https://doi.org/10.1007/s10518-021-01274-y 
+This page is the online repository for the following journal article: Kitayama, S., Cilsalar, H. (2022). "Seismic loss assessment of seismically isolated buildings designed by the procedures of ASCE/SEI 7-16." Bull Earthquake Eng. https://doi.org/10.1007/s10518-021-01274-y 
 
 This repository contains seismic loss assessment MATLAB code.
 
